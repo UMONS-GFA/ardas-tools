@@ -1,4 +1,5 @@
-#!/usr/bin/sh
+#!/bin/bash
+git clone https://github.com/UMONS-GFA/ardas.git
 if [ $1 == "--dev" ]; then
     branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
     version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
@@ -8,7 +9,6 @@ if [ $1 == "--dev" ]; then
     version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
     echo 'new commit: '$branch' | '$version
 else
-    git fetch
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
 fi

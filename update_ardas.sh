@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 rm -f ~/ardas/cronlog.log
 rm -rf ~/ardas/ardas/logs
 rm -rf ~/ardas/ardas/data
