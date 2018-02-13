@@ -1,5 +1,6 @@
 #!/bin/bash
 git clone https://github.com/UMONS-GFA/ardas.git
+cd ~/ardas
 if [ $1 == "--dev" ]; then
     branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
     version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
