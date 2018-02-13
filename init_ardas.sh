@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 git clone https://github.com/UMONS-GFA/ardas.git
+latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
+git checkout $latest_release
 touch ~/ardas/ardas/settings.py
 ln -s ~/ardas/ardas/settings.py settings
 touch ~/ardas/cronlog.log
