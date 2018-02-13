@@ -8,7 +8,7 @@ else
    opt="$1"
 fi
 
-if [ $opt == "--dev" ]; then
+if [ "$opt" == "--dev" ]; then
     echo "Switching to development version"
     branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
     version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
