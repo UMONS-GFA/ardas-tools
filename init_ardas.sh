@@ -23,14 +23,15 @@ else
     git checkout $latest_release
 fi
 touch ~/ardas/ardas/settings.py
-ln -s ~/ardas/ardas/settings.py settings
+ln -s ~/ardas/ardas/settings.py ~/settings
 touch ~/ardas/cronlog.log
-ln -s ~/ardas/cronlog.log cronlog
-mkdir -p ~/ardas/ardas/logs >> cronlog
+ln -s ~/ardas/cronlog.log ~/cronlog
+mkdir -p ~/ardas/ardas/logs >> ~/cronlog
 touch ~/ardas/ardas/logs/restart_msg.txt
 ln -s ~/ardas/ardas/logs/restart_msg.txt restart_msg
 touch ~/ardas/ardas/logs/msg_log
-ln -s ~/ardas/ardas/logs/msg_log msg_log
+ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
 touch ~/ardas/ardas/logs/data_log
-ln -s ~/ardas/ardas/logs/data_log data_log
+ln -s ~/ardas/ardas/logs/data_log ~/data_log
+mv ~/ardas/ardas/settings_example.py ~/ardas/ardas/settings.py
 cat ~/ardas/instructions.txt
