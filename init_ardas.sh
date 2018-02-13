@@ -1,7 +1,17 @@
 #!/usr/bin/sh
-git clone https://github.com/UMONS-GFA/ardas.git
-latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
-git checkout $latest_release
+if [ $1 == "--dev" ]; then
+    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
+    version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
+    echo 'current commit: '$branch' | '$version
+    git pull
+    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
+    version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
+    echo 'new commit: '$branch' | '$version
+else
+    git fetch
+    latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
+    git checkout $latest_release
+fi
 touch ~/ardas/ardas/settings.py
 ln -s ~/ardas/ardas/settings.py settings
 touch ~/ardas/cronlog.log
