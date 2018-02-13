@@ -15,19 +15,19 @@
 
 To initiate stable branch of ardas:
 
-    sh init_ardas.sh
+    bash init_ardas.sh
     
 To update stable branch:
 
-    sh update_code.sh
+    bash update_code.sh
     
 
 ## For developers
     
 To initiate development branch of ardas:
 
-    sh init_ardas.sh --dev
+    bash init_ardas.sh --dev
     
 to update development branch:
 
-T   sh update_code.sh --dev
+    bash update_code.sh --dev
