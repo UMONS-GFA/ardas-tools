@@ -1,7 +1,15 @@
 #!/bin/bash
 git clone https://github.com/UMONS-GFA/ardas.git
 cd ~/ardas
-if [ $1 == "--dev" ]; then
+if [ ! -z "$1" ]
+then
+   opt="stable"
+else
+   opt="$1"
+fi
+
+if [ $opt == "--dev" ]; then
+    echo "Switching to development version"
     branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
     version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
     echo 'current commit: '$branch' | '$version
@@ -10,6 +18,7 @@ if [ $1 == "--dev" ]; then
     version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
     echo 'new commit: '$branch' | '$version
 else
+    echo "Switching to stable version"
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
 fi
