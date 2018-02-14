@@ -34,4 +34,6 @@ ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
 touch ~/ardas/ardas/logs/data_log
 ln -s ~/ardas/ardas/logs/data_log ~/data_log
 cp ~/ardas/ardas/settings_example.py ~/ardas/ardas/settings.py
+echo "trying to retrieve settings and sensors"
+cp -r /opt/ardas_config/* ~/ardas/ardas/
 cat ~/ardas/instructions.txt
