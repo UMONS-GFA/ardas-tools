@@ -1,2 +1,8 @@
 .idea
 ardas/*
+settings
+restart_msg
+msg_log
+cronlog
+data_log
+.bash*
