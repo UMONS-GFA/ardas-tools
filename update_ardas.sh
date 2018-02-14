@@ -12,11 +12,11 @@ else
 fi
 if [ "$opt" == "--dev" ]; then
     branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-    version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
+    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
     echo 'current commit: '$branch' | '$version
     git pull
     branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-    version="$(git describe --long --dirty --abbrev=6 --tags | tr '\n' ' ')"
+    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
     echo 'new commit: '$branch' | '$version
 else
     git fetch
