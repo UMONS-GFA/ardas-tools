@@ -4,7 +4,7 @@ rm -rf ~/ardas/ardas/logs
 rm -rf ~/ardas/ardas/data
 mkdir ~/ardas/ardas/logs
 cd ~/ardas
-if [ ! -z "$1" ]
+if [ -z "$1" ]
 then
    opt="stable"
 else

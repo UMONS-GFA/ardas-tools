@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 git clone https://github.com/UMONS-GFA/ardas.git
 cd ~/ardas
-if [ ! -z "$1" ]
+if [ -z "$1" ]
 then
    opt="stable"
 else
