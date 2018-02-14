@@ -9,14 +9,9 @@ else
 fi
 
 if [ "$opt" == "--dev" ]; then
-    echo "Switching to development version"
-    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
-    echo 'current commit: '$branch' | '$version
-    git pull
-    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
-    echo 'new commit: '$branch' | '$version
+    echo "Switching to development version..."
+    git checkout develop
+    git status
 else
     echo "Switching to stable version"
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
