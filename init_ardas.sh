@@ -33,5 +33,5 @@ touch ~/ardas/ardas/logs/msg_log
 ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
 touch ~/ardas/ardas/logs/data_log
 ln -s ~/ardas/ardas/logs/data_log ~/data_log
-mv ~/ardas/ardas/settings_example.py ~/ardas/ardas/settings.py
+cp ~/ardas/ardas/settings_example.py ~/ardas/ardas/settings.py
 cat ~/ardas/instructions.txt
