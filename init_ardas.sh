@@ -28,7 +28,7 @@ touch ~/ardas/cronlog.log
 ln -s ~/ardas/cronlog.log ~/cronlog
 mkdir -p ~/ardas/ardas/logs >> ~/cronlog
 touch ~/ardas/ardas/logs/restart_msg.txt
-ln -s ~/ardas/ardas/logs/restart_msg.txt restart_msg
+ln -s ~/ardas/ardas/logs/restart_msg.txt ~/restart_msg
 touch ~/ardas/ardas/logs/msg_log
 ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
 touch ~/ardas/ardas/logs/data_log
