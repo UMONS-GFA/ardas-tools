@@ -10,18 +10,16 @@ then
 else
    opt="$1"
 fi
+git fetch
 if [ "$opt" == "--dev" ]; then
-    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
-    echo 'current commit: '$branch' | '$version
-    git pull
-    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
-    echo 'new commit: '$branch' | '$version
+   echo "Switching to development version..."
+   git checkout develop
+   git status
+   git log --max-count=1
 else
-    git fetch
-    latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
-    git checkout $latest_release
+   echo "Switching to stable version..."
+   latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
+   git checkout $latest_release
 fi
 touch ~/ardas/ardas/logs/restart_msg.txt
 echo 'installing new version: '$branch' | '$version | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt

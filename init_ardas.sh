@@ -14,7 +14,7 @@ if [ "$opt" == "--dev" ]; then
     git status
     git log --max-count=1
 else
-    echo "Switching to stable version"
+    echo "Switching to stable version..."
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
 fi
