@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "Cloning ardas repository..."
 git clone https://github.com/UMONS-GFA/ardas.git
 cd ~/ardas
 if [ -z "$1" ]
@@ -18,6 +19,10 @@ else
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
 fi
+echo "Installing dependencies..."
+pipenv --python 3
+pipenv shell
+pipenv install
 touch ~/ardas/ardas/settings.py
 ln -s ~/ardas/ardas/settings.py ~/settings
 touch ~/ardas/cronlog.log
