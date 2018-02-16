@@ -14,6 +14,7 @@ git fetch
 if [ "$opt" == "--dev" ]; then
    echo "Switching to development version..."
    git checkout develop
+   git pull
    git status
    git log --max-count=1
 else
