@@ -19,10 +19,12 @@ else
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
 fi
-echo "Installing dependencies..."
-pipenv --python 3
-pipenv shell
-pipenv install
+if [ "$2" == "--pipenv" ]; then
+    echo "Installing dependencies..."
+    pipenv --python 3
+    pipenv shell
+    pipenv install
+fi
 touch ~/ardas/ardas/settings.py
 ln -s ~/ardas/ardas/settings.py ~/settings
 touch ~/ardas/cronlog.log

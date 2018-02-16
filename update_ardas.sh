@@ -21,8 +21,10 @@ else
    latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
    git checkout $latest_release
 fi
-echo "Updating dependencies..."
-pipenv update
+if [ "$2" == "--pipenv" ]; then
+    echo "Updating dependencies..."
+    pipenv update
+fi
 touch ~/ardas/ardas/logs/restart_msg.txt
 echo 'installing new version: '$branch' | '$version | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
 nano ~/ardas/ardas/logs/restart_msg.txt
