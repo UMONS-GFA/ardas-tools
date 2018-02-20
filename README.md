@@ -19,7 +19,7 @@ To initiate stable branch of ardas:
     
 To update stable branch:
 
-    bash update_code.sh
+    bash update_ardas.sh
     
 
 ## For developers
@@ -30,4 +30,11 @@ To initiate development branch of ardas:
     
 to update development branch:
 
-    bash update_code.sh --dev
+    bash update_ardas.sh --dev
+    
+### options
+
+Update code without automatically rebooting(only for update_ardas script)::
+
+    --noreboot
+    
