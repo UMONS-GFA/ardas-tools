@@ -1,17 +1,27 @@
 #!/usr/bin/env bash
+
+DEV_MODE=0
+PIPENV_MODE=0
+
 echo "Cloning ardas repository..."
 git clone https://github.com/UMONS-GFA/ardas.git
 cd ~/ardas
-if [ -z "$1" ]
-then
-   opt="stable"
-else
-   opt="$1"
-fi
 
-if [ "$opt" == "--dev" ]; then
+for arg in "$@"
+do
+    if [ "$arg" == "--dev" ]; then
+        DEV_MODE=1
+    fi
+
+    if [ "$arg" == "--pipenv" ]; then
+        PIPENV_MODE=1
+    fi
+done
+
+if [ $DEV_MODE -eq 1 ]; then
     echo "Switching to development version..."
     git checkout develop
+    git pull
     git status
     git log --max-count=1
 else
@@ -19,12 +29,14 @@ else
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
 fi
-if [ "$2" == "--pipenv" ]; then
-    echo "Installing dependencies..."
-    pipenv --python 3
-    pipenv shell
-    pipenv install
+
+if [ $PIPENV_MODE -eq 1 ]; then
+     echo "Installing dependencies..."
+     pipenv --python 3
+     pipenv shell
+     pipenv install
 fi
+
 touch ~/ardas/ardas/settings.py
 ln -s ~/ardas/ardas/settings.py ~/settings
 touch ~/ardas/cronlog.log
