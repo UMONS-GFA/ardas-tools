@@ -34,7 +34,7 @@ to update development branch:
     
 ### options
 
-Update code without automatically rebooting(only for update_ardas script)::
+Update code without automatically rebooting(only for update_ardas script)
 
     --noreboot
     
