@@ -43,11 +43,13 @@ if [ $PIPENV_MODE -eq 1 ]; then
      pipenv update
 fi
 
+branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
+version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
+touch ~/ardas/ardas/logs/restart_msg.txt
+echo 'installing new version: '$branch' | '$version | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
+nano ~/ardas/ardas/logs/restart_msg.txt
+cd ~
 if [ $REBOOT_MODE -eq 1 ]; then
-    touch ~/ardas/ardas/logs/restart_msg.txt
-    echo 'installing new version: '$branch' | '$version | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
-    nano ~/ardas/ardas/logs/restart_msg.txt
-    cd ~
     sudo reboot
 fi
 

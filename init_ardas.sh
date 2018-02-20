@@ -42,7 +42,10 @@ ln -s ~/ardas/ardas/settings.py ~/settings
 touch ~/ardas/cronlog.log
 ln -s ~/ardas/cronlog.log ~/cronlog
 mkdir -p ~/ardas/ardas/logs >> ~/cronlog
+branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
+version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
 touch ~/ardas/ardas/logs/restart_msg.txt
+echo 'installing new version: '$branch' | '$version | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
 ln -s ~/ardas/ardas/logs/restart_msg.txt ~/restart_msg
 touch ~/ardas/ardas/logs/msg_log
 ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
