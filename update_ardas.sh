@@ -3,6 +3,7 @@
 DEV_MODE=0
 PIPENV_MODE=0
 REBOOT_MODE=1
+VERSION=''
 
 rm -f ~/ardas/cronlog.log
 rm -rf ~/ardas/ardas/logs
@@ -32,10 +33,15 @@ if [ $DEV_MODE -eq 1 ]; then
     git pull
     git status
     git log --max-count=1
+    branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
+    version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
+    VERSION=$branch' | '$version
 else
     echo "Switching to stable version..."
     latest_release="$(git describe --tags `git rev-list --tags --max-count=1`)"
     git checkout $latest_release
+    VERSION=$latest_release
+
 fi
 
 if [ $PIPENV_MODE -eq 1 ]; then
@@ -43,10 +49,9 @@ if [ $PIPENV_MODE -eq 1 ]; then
      pipenv update
 fi
 
-branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
-version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
+
 touch ~/ardas/ardas/logs/restart_msg.txt
-echo 'installing new version: '$branch' | '$version | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
+echo 'installing new version: '$VERSION | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
 nano ~/ardas/ardas/logs/restart_msg.txt
 cd ~
 if [ $REBOOT_MODE -eq 1 ]; then
