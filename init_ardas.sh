@@ -56,6 +56,7 @@ echo 'installing new version: '$VERSION | tr '\n' '.' >> ~/ardas/ardas/logs/rest
 ln -s ~/ardas/ardas/logs/restart_msg.txt ~/restart_msg
 touch ~/ardas/ardas/logs/msg_log
 ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
+mkdir -p ~/ardas/ardas/data
 touch ~/ardas/ardas/data/data_log
 ln -s ~/ardas/ardas/data/data_log ~/data_log
 cp ~/ardas/ardas/settings_example.py ~/ardas/ardas/settings.py
