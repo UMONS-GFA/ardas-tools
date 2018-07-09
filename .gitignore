@@ -6,3 +6,4 @@ msg_log
 cronlog
 data_log
 .bash*
+docs/build
