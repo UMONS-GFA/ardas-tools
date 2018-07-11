@@ -14,15 +14,15 @@ git fetch
 
 for arg in "$@"
 do
-    if [ "$arg" == "--dev" ]; then
+    if [ "$arg" = "--dev" ]; then
         DEV_MODE=1
     fi
 
-    if [ "$arg" == "--pipenv" ]; then
+    if [ "$arg" = "--pipenv" ]; then
         PIPENV_MODE=1
     fi
 
-    if [ "$arg" == "--noreboot" ]; then
+    if [ "$arg" = "--noreboot" ]; then
         REBOOT_MODE=0
     fi
 done

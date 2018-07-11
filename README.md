@@ -40,3 +40,6 @@ Update code without automatically rebooting(only for update_ardas script)
 
     --noreboot
     
+Create a new virtual environment and install all dependencies
+
+    --pipenv
