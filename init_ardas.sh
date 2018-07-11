@@ -39,6 +39,9 @@ fi
 
 if [ $PIPENV_MODE -eq 1 ]; then
      echo "Installing dependencies..."
+     #increase pipenv timeout for raspberry pi
+     echo "export PIPENV_TIMEOUT=500" >> ~/.bashrc
+     exec ~/.bashrc
      pipenv --python 3
      pipenv shell
      pipenv install
