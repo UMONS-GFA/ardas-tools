@@ -31,6 +31,7 @@ To update stable branch::
     bash update_ardas.sh
 
 
+
 * For developers
 
 To initiate development branch of ardas::
