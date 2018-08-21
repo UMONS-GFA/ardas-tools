@@ -30,7 +30,8 @@ To update stable branch::
 
     bash update_ardas.sh
 
-
+These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
+See the :--nopienv:`nopienv` option for the alternative
 
 * For developers
 
@@ -70,7 +71,7 @@ Options
 
     --noreboot
 
-
+.. _nopipenv:
 * Prevent creating a new virtual environment and installing all dependencies
 
 Installing dependencies could be slow on a raspberry pi. If you plan to install several identical loggers,
