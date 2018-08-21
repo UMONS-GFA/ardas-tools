@@ -31,19 +31,19 @@ Initialization and setup
         bash update_ardas.sh
 
     These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
-    See the :--nopienv:`nopienv_` option for the alternative
+    See the nopienv_ option for the alternative
 
 * For developers
 
-To initiate development branch of ardas::
+    To initiate development branch of ardas::
 
-    bash init_ardas.sh --dev
+        bash init_ardas.sh --dev
 
-to update development branch::
+    To update development branch::
 
-    bash update_ardas.sh --dev
+        bash update_ardas.sh --dev
 
-Follow the instructions to set the approriate sensors and acquisition settings.
+    Follow the instructions to set the approriate sensors and acquisition settings.
 
 Configure the ardas
 -------------------
