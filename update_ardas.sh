@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEV_MODE=0
-PIPENV_MODE=0
+PIPENV_MODE=1
 REBOOT_MODE=1
 VERSION=''
 
@@ -18,8 +18,8 @@ do
         DEV_MODE=1
     fi
 
-    if [ "$arg" = "--pipenv" ]; then
-        PIPENV_MODE=1
+    if [ "$arg" = "--nopipenv" ]; then
+        PIPENV_MODE=0
     fi
 
     if [ "$arg" = "--noreboot" ]; then
@@ -46,6 +46,7 @@ fi
 
 if [ $PIPENV_MODE -eq 1 ]; then
      echo "Updating dependencies..."
+     pipenv shell
      pipenv update
 fi
 
