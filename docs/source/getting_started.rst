@@ -65,7 +65,14 @@ Don't forget to type a message to explain in which circumstances (and eventually
 Options
 -------
 
-Update code without automatically rebooting(only for update_ardas script)::
+* Update code without automatically rebooting(only for update_ardas script)::
 
     --noreboot
 
+
+* Prevent creating a new virtual environment and installing all dependencies
+Installing dependencies could be slow on a raspberry pi. If you plan to install several identical loggers,
+it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
+The following option will prevent the system from creating a new virtual environment and installing all dependencies::
+
+    --nopipenv
