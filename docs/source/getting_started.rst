@@ -32,7 +32,7 @@ Initialization and setup
         bash update_ardas.sh
 
     These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
-    See the :nopienv_ option for the alternative
+    See the nopipenv_ option for the alternative
 
 * For developers
 
