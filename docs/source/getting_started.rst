@@ -32,7 +32,7 @@ Initialization and setup
         bash update_ardas.sh
 
     These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
-    See the nopipenv_ option for the alternative
+    See the nopipenv_ option for an alternative...
 
 * For developers
 
@@ -72,7 +72,7 @@ Options
 
         --noreboot
 
-.. _nopipenv:* Prevent creating a new virtual environment and installing all dependencies
+* .. _nopipenv:Prevent creating a new virtual environment and installing all dependencies
 
     Installing dependencies could be slow on a raspberry pi. If you plan to install several identical loggers,
     it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
