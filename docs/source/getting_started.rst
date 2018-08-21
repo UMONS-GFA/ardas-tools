@@ -22,16 +22,16 @@ Initialization and setup
 * For production
 
 
-To initiate stable branch of ardas::
+    To initiate stable branch of ardas::
 
-    bash init_ardas.sh
+        bash init_ardas.sh
 
-To update stable branch::
+    To update stable branch::
 
-    bash update_ardas.sh
+        bash update_ardas.sh
 
-These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
-See the :--nopienv:`nopienv` option for the alternative
+    These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
+    See the :--nopienv:`nopienv_` option for the alternative
 
 * For developers
 
@@ -74,8 +74,8 @@ Options
 .. _nopipenv:
 * Prevent creating a new virtual environment and installing all dependencies
 
-Installing dependencies could be slow on a raspberry pi. If you plan to install several identical loggers,
-it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
-The following option will prevent the system from creating a new virtual environment and installing all dependencies::
+    Installing dependencies could be slow on a raspberry pi. If you plan to install several identical loggers,
+    it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
+    The following option will prevent the system from creating a new virtual environment and installing all dependencies::
 
     --nopipenv
