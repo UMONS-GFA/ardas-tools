@@ -77,7 +77,7 @@ Options
 
     Installing dependencies could be slow on a raspberry pi. If you plan to install several identical loggers,
     it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
-    The following option will prevent the system from creating a new virtual environment and installing all dependencies::
+    The following option could then be used to prevent the system from creating a new virtual environment and retrieving dependencies::
 
-        --nopipenv
+    --nopipenv
 
