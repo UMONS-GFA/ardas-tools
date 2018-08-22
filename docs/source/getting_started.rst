@@ -10,6 +10,8 @@ Preparation
 * Power up the raspberry pi and wait for the raspberry pi to boot
 * Log on the raspberry pi (using ssh)
 
+.. warning:: Make sure you don't have a cron task activated
+
 Download the code
 -----------------
 
@@ -32,15 +34,15 @@ Initialization and setup
         bash update_ardas.sh
 
     These scripts can take quite a long time to retrieve the python dependencies, espacially when using a rapsberry pi one.
-    See the :-nopip:`options` option for an alternative...
+    See the :ref:`options` option for an alternative...
 
 * For developers
 
-    To initiate development branch of ardas::
+    To initiate development branch of ardas ::
 
         bash init_ardas.sh --dev
 
-    To update development branch::
+    To update development branch ::
 
         bash update_ardas.sh --dev
 
@@ -48,11 +50,11 @@ Initialization and setup
 
 Configure the ardas
 -------------------
-* Set the default arduino config::
+* Set the default arduino config ::
 
         bash reset_arduino_EEPROM.sh
 
-* Upload the sketch in the arduino::
+* Upload the sketch in the arduino ::
 
         bash upgrade_sketch.sh
 
@@ -66,6 +68,7 @@ Start logging
     Don't forget to type a message to explain in which circumstances (and eventually by whom) the system is rebooted. It show in the logs when the system will restart.
 
 .. _options:
+
 Options
 -------
 
