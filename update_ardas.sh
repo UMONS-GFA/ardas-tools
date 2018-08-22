@@ -53,6 +53,8 @@ fi
 
 touch ~/ardas/ardas/logs/restart_msg.txt
 echo 'installing new version: '$VERSION | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
+rm ~/VERSION*
+touch ~/'VERSION'$VERSION | tr '\n' '.'
 nano ~/ardas/ardas/logs/restart_msg.txt
 cd ~
 if [ $REBOOT_MODE -eq 1 ]; then

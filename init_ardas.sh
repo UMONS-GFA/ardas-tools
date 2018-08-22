@@ -52,6 +52,8 @@ branch="$(git rev-parse --abbrev-ref HEAD | tr '\n' ' ')"
 version="$(git describe --long --dirty --abbrev=7 --tags | tr '\n' ' ')"
 touch ~/ardas/ardas/logs/restart_msg.txt
 echo 'installing new version: '$VERSION | tr '\n' '.' >> ~/ardas/ardas/logs/restart_msg.txt
+rm ~/VERSION*
+touch ~/'VERSION'$VERSION | tr '\n' '.'
 ln -s ~/ardas/ardas/logs/restart_msg.txt ~/restart_msg
 touch ~/ardas/ardas/logs/msg_log
 ln -s ~/ardas/ardas/logs/msg_log ~/msg_log
