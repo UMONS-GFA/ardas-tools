@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEV_MODE=0
-PIPENV_MODE=1
+PIP_MODE=1
 REBOOT_MODE=1
 VERSION=''
 
@@ -18,7 +18,7 @@ do
         DEV_MODE=1
     fi
 
-    if [ "$arg" = "--nopipenv" ]; then
+    if [ "$arg" = "--nopip" ]; then
         PIPENV_MODE=0
     fi
 
@@ -44,10 +44,9 @@ else
 
 fi
 
-if [ $PIPENV_MODE -eq 1 ]; then
+if [ $PIP_MODE -eq 1 ]; then
      echo "Updating dependencies..."
-     pipenv shell
-     pipenv update
+     pip3 install -r requirements.txt
 fi
 
 
