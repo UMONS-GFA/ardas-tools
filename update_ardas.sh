@@ -29,6 +29,7 @@ done
 
 if [ $DEV_MODE -eq 1 ]; then
     echo "Switching to development version..."
+    git fetch
     git checkout develop
     git pull
     git status
