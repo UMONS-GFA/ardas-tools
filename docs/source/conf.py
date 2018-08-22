@@ -52,8 +52,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'ardas-tools'
-copyright = '2018, Christophe Bastin'
-author = 'Christophe Bastin'
+copyright = '2018, Christophe Bastin, Olivier Kaufmann'
+author = 'Christophe Bastin, Olivier Kaufmann'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
