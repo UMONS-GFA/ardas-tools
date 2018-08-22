@@ -59,6 +59,6 @@ mkdir -p ~/ardas/ardas/data
 touch ~/ardas/ardas/data/data_log
 ln -s ~/ardas/ardas/data/data_log ~/data_log
 cp ~/ardas/ardas/settings_example.py ~/ardas/ardas/settings.py
-echo "trying to retrieve settings and sensors"
+echo "trying to retrieve settings and sensors from /opt/ardas_config/"
 cp -r /opt/ardas_config/* ~/ardas/ardas/
 cat ~/ardas/instructions.txt
