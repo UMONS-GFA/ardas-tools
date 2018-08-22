@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEV_MODE=0
-PIPENV_MODE=1
+PIP_MODE=1
 VERSION=''
 
 
@@ -15,8 +15,8 @@ do
         DEV_MODE=1
     fi
 
-    if [ "$arg" = "--nopipenv" ]; then
-        PIPENV_MODE=0
+    if [ "$arg" = "--nopip" ]; then
+        PIP_MODE=0
     fi
 done
 
@@ -37,14 +37,9 @@ else
     VERSION=$latest_release
 fi
 
-if [ $PIPENV_MODE -eq 1 ]; then
+if [ $PIP_MODE -eq 1 ]; then
      echo "Installing dependencies..."
-     #increase pipenv timeout for raspberry pi
-     echo "export PIPENV_TIMEOUT=500" >> ~/.bashrc
-     exec ~/.bashrc
-     pipenv --python 3
-     pipenv shell
-     pipenv install
+     pip3 install -r requirements.txt
 fi
 
 touch ~/ardas/ardas/settings.py
