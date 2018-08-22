@@ -10,6 +10,8 @@ Preparation
 * Power up the raspberry pi and wait for the raspberry pi to boot
 * Log on the raspberry pi (using ssh)
 
+.. warning:: Make sure you don't have a cron task activated
+
 Download the code
 -----------------
 
@@ -23,7 +25,7 @@ Initialization and setup
 * For production
 
 
-    To initiate stable branch of ardas ::
+    To initiate stable branch of ardas::
 
         bash init_ardas.sh
 
@@ -66,6 +68,7 @@ Start logging
     Don't forget to type a message to explain in which circumstances (and eventually by whom) the system is rebooted. It show in the logs when the system will restart.
 
 .. _options:
+
 Options
 -------
 
@@ -77,7 +80,7 @@ Options
 
     Installing dependencies could be slow on a raspberry pi, espacially a . If you plan to install several identical loggers,
     it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
-    The following option could then be used to prevent the system from creating a new virtual environment and retrieving dependencies ::
+    The following option could then be used to prevent the system from creating a new virtual environment and retrieving dependencies::
 
     --nopip
 
