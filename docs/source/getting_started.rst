@@ -23,7 +23,7 @@ Initialization and setup
 * For production
 
 
-    To initiate stable branch of ardas::
+    To initiate stable branch of ardas ::
 
         bash init_ardas.sh
 
@@ -36,11 +36,11 @@ Initialization and setup
 
 * For developers
 
-    To initiate development branch of ardas::
+    To initiate development branch of ardas ::
 
         bash init_ardas.sh --dev
 
-    To update development branch::
+    To update development branch ::
 
         bash update_ardas.sh --dev
 
@@ -48,11 +48,11 @@ Initialization and setup
 
 Configure the ardas
 -------------------
-* Set the default arduino config::
+* Set the default arduino config ::
 
         bash reset_arduino_EEPROM.sh
 
-* Upload the sketch in the arduino::
+* Upload the sketch in the arduino ::
 
         bash upgrade_sketch.sh
 
@@ -77,7 +77,7 @@ Options
 
     Installing dependencies could be slow on a raspberry pi, espacially a . If you plan to install several identical loggers,
     it could be advisable to create a disk image with the right dependencies installed in the virtual environment.
-    The following option could then be used to prevent the system from creating a new virtual environment and retrieving dependencies::
+    The following option could then be used to prevent the system from creating a new virtual environment and retrieving dependencies ::
 
     --nopip
 
