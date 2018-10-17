@@ -14,3 +14,5 @@ ln -s /usr/lib/jvm/java-8-openjdk-armhf/jre/lib/arm/client/libjvm.so /usr/lib/jv
 # end of fix
 apt install arduino cmake gcc-avr binutils-avr avr-libc avrdude
 apt install ntp
+#fix for numpy error ( libf77blas.so.3: cannot open shared object file)
+apt-get install libatlas-base-dev
