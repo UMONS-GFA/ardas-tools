@@ -19,7 +19,7 @@ do
     fi
 
     if [ "$arg" = "--nopip" ]; then
-        PIPENV_MODE=0
+        PIP_MODE=0
     fi
 
     if [ "$arg" = "--noreboot" ]; then
