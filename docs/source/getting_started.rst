@@ -81,6 +81,28 @@ Initialization and setup
 
     Follow the instructions to set the approriate sensors and acquisition settings.
 
+
+Configure the PYTHONPATH
+------------------------
+::
+
+    nano ~/.bashrc
+
+add at the end::
+
+    export PYTHONPATH=/home/pi/ardas
+
+Refresh your profile::
+
+    source ~/.bashrc
+
+Generate the sensors
+--------------------
+
+You can use the *uncalibrated_sensors_generator.py* script to generate 4 uncalibrated sensors::
+
+    python3 /home/pi/ardas/ardas/uncalibrated_sensors_generator.py
+
 Configure the ardas
 -------------------
 * Set the default arduino config ::
@@ -90,6 +112,32 @@ Configure the ardas
 * Upload the sketch in the arduino::
 
         bash upgrade_sketch.sh
+
+
+Define your settings
+--------------------
+
+Make a copy of the *settings_example.py* and name it *settings.py*::
+
+    cp /home/pi/ardas/ardas/settings_example.py /home/pi/ardas/ardas/settings.py
+
+Configure this file for your needs.
+
+
+Add a cron task
+---------------
+::
+    crontab -e
+
+
+and add::
+
+    PYTHONPATH=/home/pi/ardas
+
+    # m h  dom mon dow   command
+    @reboot /usr/bin/python3 /home/pi/ardas/ardas/raspardas.py > /home/pi/ardas/cronlog.log 2>&1 &
+
+
 
 Start logging
 -------------
@@ -117,3 +165,24 @@ Options
        --nopip
 
 ...
+
+
+Debug
+-----
+
+If there is a communication problem with the Arduino, you can try to debug with picocom::
+
+    apt install picocom
+
+Make sure the python cron task is not running::
+
+    ps -aux | grep python3
+
+Launch picocom::
+
+    picocom -b 57600 /dev/ttyACM0
+
+Use Ctr+a then Ctrl+c to enable echo.
+
+To quit, use Ctrl+x
+
