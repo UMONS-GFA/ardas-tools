@@ -127,6 +127,7 @@ Configure this file for your needs.
 Add a cron task
 ---------------
 ::
+
     crontab -e
 
 
@@ -163,8 +164,6 @@ Options
     The following option could then be used to prevent the system from creating a new virtual environment and retrieving dependencies::
 
        --nopip
-
-...
 
 
 Debug
