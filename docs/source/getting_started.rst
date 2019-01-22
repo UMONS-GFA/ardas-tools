@@ -105,7 +105,7 @@ You can use the *uncalibrated_sensors_generator.py* script to generate 4 uncalib
 
 Configure the ardas
 -------------------
-* Set the default arduino config ::
+* Set the default arduino config, default netid will be 255::
 
         bash reset_arduino_EEPROM.sh
 
@@ -184,4 +184,25 @@ Launch picocom::
 Use Ctr+a then Ctrl+c to enable echo.
 
 To quit, use Ctrl+x
+
+Call the ardas with his netid::
+
+    -255
+Set naïve data mode::
+
+    #ND
+
+You can now change the default config with ZR command::
+
+    #ZR station netId integrationPeriod nbInst sensor1 sensor2 sensor3 sensor4 code
+
+    Ex: #ZR 1111 222 3333 4 0001 0002 0003 0004 31
+
+Set raspardas data mode::
+
+    #RD
+
+Change your settings accordingly
+
+
 
